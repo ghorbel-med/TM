@@ -1,0 +1,28 @@
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <form [formGroup]="formdata" class="example"  (ngSubmit) = "onClickSubmit(formdata.value)">
+    <input type="text" class="form-control"  placeholder="Type a short text .."  name = "text" formControlName="text">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <table *ngIf="verif()" id="MaTable" class="table" class="tabcenter">
+    <thead>
+      <tr>
+        <th>Language</th>
+        <th>Sentiment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let data of result">
+        <td>{{data.result[0]}}</td>
+        <td>{{data.result[1]}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
